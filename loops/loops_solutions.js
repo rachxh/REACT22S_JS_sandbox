@@ -35,6 +35,8 @@ while (distance != 0) {
   console.log('average is: ', average);
 }
 
+// Eyvaz solution
+
 do {
   distance = prompt('Please enter the distance in km.');
 
@@ -42,6 +44,8 @@ do {
 
   console.log('average speed is', distance / time);
 } while (distance != 0);
+
+// Onis solution
 
 let distance, time;
 
@@ -57,6 +61,7 @@ do {
     ${distance / time}`);
 } while (distance != 0);
 
+// Jason's solution
 function avarageSpeed() {
   let stopper;
 
@@ -81,6 +86,8 @@ function avarageSpeed() {
 
 avarageSpeed();
 
+// Jenni's solution
+
 while (true) {
   let distance = prompt('Give distance (km)');
 
@@ -97,6 +104,7 @@ while (true) {
   console.log(`Average speed is ${averageSpeed} km per hour.`);
 }
 
+// Ilia's solution
 do {
   dist = parseInt(prompt('Enter distance'));
   let time = parseInt(prompt('enter time'));
@@ -129,6 +137,8 @@ while (input != 0) {
 
 console.log(sum / count - 1);
 
+// Jason's solution
+
 function getAvarage() {
   let numberAvarage = 0;
 
@@ -154,6 +164,8 @@ function getAvarage() {
 }
 
 getAvarage();
+
+// Ilia's solution
 
 let count = 0;
 let sum = 0;
