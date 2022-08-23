@@ -176,11 +176,290 @@ while (input != 0) {
   count++;
 }
 let whole = Math.round(sum / count);
-console.log(`Average number is: ${whole}`);
 
 // 6. Make a program that asks 25 numbers form the user. In the end program prints out average of the numbers.
 
+let sum = 0;
+let counter = 0;
+
+do {
+  let input = Number(prompt('enter a number'));
+  sum += input;
+  counter++;
+} while (counter !== 5);
+
+console.log(`Average was ${sum / counter}`);
+
+// Jason's solution
+
+function getAvarage() {
+  let numberAvarage = 0;
+
+  let digitSum = 0;
+
+  for (let i = 0; i < 5; i++) {
+    let singleDigit = parseFloat(prompt(`Enter a digit #${i + 1}: .`));
+
+    digitSum += singleDigit;
+  }
+
+  numberAvarage = digitSum / 5;
+
+  console.log(
+    `There are 5 numbers, their total is ${digitSum} and their avarage is ${numberAvarage}.`
+  );
+}
+
+getAvarage();
+
+// Jenni's solution
+
+let numsCounter = 0;
+let numsSum = 0;
+let numsAvg = 0;
+
+while (true) {
+  let number = prompt('Pls give 25 numbers');
+
+  if (numsCounter >= 5) {
+    break;
+  }
+
+  numsSum = numsSum + parseFloat(number);
+  numsCounter++;
+}
+
+numsAvg = numsSum / parseFloat(numsCounter);
+
+console.log(`Average of numbers is ${numsAvg}`);
+
 // 7. Make a program that ask first one number from the user. After that the program asks: ”Do you want to continue giving numbers?(y/n)”. If user answers y, the program continues to ask another number. If user answers n, program ends. In the end program prints out average of the numbers.
+
+let input, confirmation;
+let sum = 0;
+let counter = 0;
+
+while (confirmation != 'n') {
+  input = Number(prompt('Enter your number'));
+  confirmation = prompt('Do you want to continue giving numbers?(y/n)');
+  sum = sum + input;
+  counter++;
+}
+
+console.log(`Average is ${sum / counter}`);
+
+// Jason's solution
+
+function getAvarage() {
+  let numberAvarage = 0;
+  let numberCount = 0;
+  let digitSum = 0;
+  let doContinue = '';
+
+  do {
+    const singleDigit = parseFloat(prompt(`Enter a digit: `));
+
+    doContinue = askToContinue();
+
+    if (doContinue == 'y' || doContinue == 'n') {
+      digitSum += singleDigit;
+
+      numberCount += 1;
+    } else {
+      console.log('You did not enter y or n. Try again!');
+
+      doContinue = askToContinue();
+    }
+  } while (doContinue == 'y');
+
+  numberAvarage = digitSum / numberCount;
+
+  console.log(
+    `There are ${numberCount} numbers, their total is ${digitSum} and their avarage is ${numberAvarage}.`
+  );
+}
+
+function askToContinue() {
+  return prompt(`Do you want to continue y/n?`);
+}
+
+getAvarage();
+
+// Dang's solution
+
+let number, i, average, answer;
+
+let sum = 0;
+
+function askNumber() {
+  number = parseInt(prompt('Give me a number?'));
+
+  console.log('Your ', i, ' number is ', number);
+
+  sum += number;
+
+  console.log('Your current sum is ', sum);
+
+  average = sum / i;
+}
+
+function giveNumber() {
+  answer = String(prompt('Do you want to give more number? (y/n)'));
+
+  console.log('your answer is ', answer);
+
+  if (answer == 'y') {
+    console.log('You answered YES, program continues');
+  } else if (answer == 'n') {
+    console.log('You answered NO, program ends');
+  } else {
+    console.log('Wrong answer, y or n only');
+
+    giveNumber();
+  }
+}
+
+for (i = 1; i < 26; i++) {
+  askNumber();
+
+  giveNumber();
+
+  if (answer == 'n') {
+    i += 100;
+
+    console.log('The average is =', average);
+  }
+}
+
+// Hasan's solution
+
+let questions21 = false;
+let question = true;
+let count7 = 0;
+let sum7 = 0;
+let average7 = 0;
+
+do {
+  let number1 = Number.parseInt(window.prompt('Enter your number'));
+  count7++;
+  sum7 += number1;
+  average7 = sum7 / count7;
+
+  let questions = window.prompt('Do you want to continue giving numbers?(y/n)');
+
+  if (questions === 'y') {
+    question = true;
+  } else if (questions === 'n') {
+    question = false;
+  } else {
+    do {
+      questions21 = true;
+
+      let questions13 = window.prompt(
+        'Do you want to continue giving numbers?(y/n)'
+      );
+
+      if (questions13 === 'y' || questions13 === 'n') {
+        questions21 = false;
+      }
+    } while (questions21);
+  }
+} while (question);
+
+console.log(average7);
+
+// Jesse's solution
+
+let averagewithyesno = () => {
+  let numbers = 0;
+  let nsums = 0;
+  let ncounter = 0;
+  let continueadd = 0;
+  do {
+    numbers = parseInt(prompt('enter any number'));
+    continueadd = confirm('Do you want to add another number?');
+    ncounter += 1;
+    nsums += numbers;
+    let result = nsums / ncounter;
+    console.log(result);
+    // document.getElementById("agestatu").innerHTML=result;
+  } while (continueadd);
+  //divscroll();
+  alert('thank you for your time');
+};
+
+// Onis solution
+let count = 0,
+  num = 0,
+  questionPrompt,
+  numPrompt;
+
+do {
+  numPrompt = +prompt('Enter a number: ');
+
+  num += numPrompt;
+
+  count++;
+
+  questionPrompt = prompt(
+    'Do you want to continue giving numbers?(y/n)'
+  ).toLowerCase();
+} while (questionPrompt === 'y');
+
+average = Math.round(num / count);
+
+console.log(
+  `The average is: ${average} and the total number(s) inputted is ${count}`
+);
+
+// Jenni's solution
+
+let avgOfNums = 0;
+let numsCount = 0;
+let sumOfNums = 0;
+
+while (true) {
+  let userInputNum = prompt('Give me a number?');
+
+  let userAnswer = prompt('Do you want to continue giving numbers?(y/n)');
+
+  sumOfNums = sumOfNums + parseFloat(userInputNum);
+
+  numsCount++;
+
+  if (userAnswer === 'n') {
+    break;
+  }
+}
+
+avgOfNums = sumOfNums / parseFloat(numsCount);
+
+console.log(`Average of numbers is ${avgOfNums} `);
+
+// Tuan's solution
+
+const askingAverageNumber = () => {
+  let total = 0;
+  let average;
+  let count = 0;
+  let secondQuestion = true;
+
+  while (secondQuestion) {
+    count++;
+
+    let firstQuestion = prompt('please insert any number ');
+
+    total += parseInt(firstQuestion);
+
+    average = total / count;
+
+    secondQuestion = confirm('Do you want to continue giving numbers? ?');
+
+    if (!secondQuestion) return alert('Average Number is : ' + average);
+  }
+};
+
+askingAverageNumber();
 
 // 8. Make a program that asks first how many numbers user wants to give to the program. After that program asks those numbers. In the end program prints out the smallest number that user gave.
 
