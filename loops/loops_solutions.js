@@ -463,6 +463,42 @@ askingAverageNumber();
 
 // 8. Make a program that asks first how many numbers user wants to give to the program. After that program asks those numbers. In the end program prints out the smallest number that user gave.
 
+let min = 0;
+let input = prompt('How many numbers you want to input?');
+
+for (let n = 0; n < input; n++) {
+  let num = Number(prompt('Enter number'));
+  if (num >= 0 && min == 0) {
+    min = num;
+  } else if (num < min) {
+    min = num;
+  }
+}
+
+console.log(min);
+
+// Lera's solution
+
+function printMin() {
+  let i = +prompt('How many numbers would you like to give?');
+
+  if (i < 1) return;
+
+  let num;
+
+  let min = +prompt('Enter a number');
+
+  while (--i) {
+    num = +prompt('Enter a number');
+
+    if (num < min) min = num;
+  }
+
+  alert(`The smallest number that you gave was ${min}`);
+}
+
+printMin();
+
 // 9. Make a program that asks ten numbers and in the end prints out two biggest numbers.
 
 // 10. Make a program that asks ten numbers. Program calculates and prints out sum and average, also prints out the smallest and biggest number.
