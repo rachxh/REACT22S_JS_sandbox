@@ -12,6 +12,46 @@ html {
   font-size: 14px;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0;
+}
+
+p {
+  color: grey;
+  margin: 0 0 1rem;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+button {
+  color: white;
+  background: orange;
+  border: none;
+  padding: 1rem 2rem;
+}
+button:hover {
+  color: white;
+  background: rgb(209, 138, 7);
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
 .container {
   display: flex;
 }
@@ -24,15 +64,9 @@ html {
 
 .content {
   width: 50vw;
+  padding: 2rem;
 }
 
 #order {
   width: 20vw;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-
-form {
 }
