@@ -57,7 +57,7 @@ button:hover {
 }
 
 .hero-image {
-  width: 50vw;
+  width: 25vw;
   background: url('https://source.unsplash.com/UxRhrU8fPHQ') no-repeat fixed
     bottom center/cover;
 }
@@ -69,4 +69,18 @@ button:hover {
 
 #order {
   width: 20vw;
+}
+
+#order {
+  position: fixed;
+  right: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: black;
+  font-size: 1.2rem;
+  width: 19vw;
+}
+span {
+  color: orangered;
 }
