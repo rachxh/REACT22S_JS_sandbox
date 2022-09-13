@@ -15,7 +15,8 @@ const setGradient = (event) => {
     }
   }
 
-  let gradient = `linear-gradient (${selectedValue}, ${color1.value}, ${color2.value})`;
+  let gradient = `linear-gradient(${selectedValue}, ${color1.value}, ${color2.value})`;
+  console.log(gradient);
 
   document.body.style.backgroundImage = gradient;
   text.textContent = gradient + ';';
