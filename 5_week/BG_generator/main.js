@@ -15,9 +15,10 @@ const setGradient = (event) => {
     }
   }
 
-  document.body.style.backgroundImage = `linear-gradient (${selectedValue}, ${color1.value}, ${color2.value});`;
+  let gradient = `linear-gradient (${selectedValue}, ${color1.value}, ${color2.value})`;
 
-  text.textContent = document.body.style.backgroundImage + ';';
+  document.body.style.backgroundImage = gradient;
+  text.textContent = gradient + ';';
 };
 
 form.addEventListener('change', setGradient);
