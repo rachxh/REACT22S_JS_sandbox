@@ -3,7 +3,6 @@
 
 
 //Evaluate the below:
-something! //
 3 + "65" 
 7 - "3" 
 15 % 5 
