@@ -90,18 +90,25 @@ section:last-child {
 /* MODAL */
 
 .overlay {
+  display: none;
+}
+
+.overlay.visible {
+  display: flex;
+}
+
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #032330d8;
-  display: flex;
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  color: #333;
 }
-
-.modal {
+.overlay.visible .modal {
   position: relative;
   background: white;
   min-height: 50vh;
@@ -109,18 +116,12 @@ section:last-child {
   border-radius: 10px;
   color: #032330;
   padding: 3rem;
-  box-shadow: 0 0 15px rgb(111, 111, 111);
 }
 
-.close {
+.overlay.visible .close {
   position: absolute;
   top: 20px;
   right: 20px;
-}
-.overlay,
-.modal,
-.close {
-  display: none;
 }
 
 /* FOOTER */
@@ -162,5 +163,7 @@ section:last-child {
   }
   nav.responsive ul li a {
     color: #032330;
+    display: block;
+    width: 100%;
   }
 }

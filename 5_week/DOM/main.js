@@ -2,7 +2,10 @@ const header = document.querySelector('header');
 const backButton = document.querySelector('#back_to_top');
 const mobButton = document.querySelector('#mob_button');
 const nav = document.querySelector('nav');
-let links = document.querySelectorAll('nav ul li a');
+const links = document.querySelectorAll('nav ul li a');
+const modalButton = document.querySelector('#modalButton');
+const closeButton = document.querySelector('#closeButton');
+const overlay = document.querySelector('.overlay');
 
 window.onscroll = function () {
   scrollFunction();
@@ -25,6 +28,9 @@ const getToTop = () => {
 };
 
 const mobMenu = () => {
+  for (const link of links) {
+    link.addEventListener('click', mobMenu);
+  }
   if (nav.classList.contains('responsive')) {
     nav.classList.remove('responsive');
     document.body.style.overflow = '';
@@ -34,9 +40,11 @@ const mobMenu = () => {
   }
 };
 
-for (const link of links) {
-  link.addEventListener('click', mobMenu);
-}
+const modal = () => {
+  overlay.classList.toggle('visible');
+};
 
 backButton.addEventListener('click', getToTop);
 mobButton.addEventListener('click', mobMenu);
+modalButton.addEventListener('click', modal);
+closeButton.addEventListener('click', modal);
